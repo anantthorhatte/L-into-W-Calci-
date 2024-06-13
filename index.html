@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>L*B Calculator</title>
+    <style>
+        body{
+            background-color: #D9AFD9;
+            background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
+
+            min-height: 100vh;
+            
+        }
+        .card{
+            background-color: #b4deed;
+            width:676px ;
+            display: block;
+            margin: auto;
+            text-align: center;
+            border-radius: 20px;
+            box-shadow: none;
+            padding: 30px;
+            font-size: 20px;
+
+        }
+
+        .app-title{
+            text-align: center;
+            color: #282328;
+            
+        }
+        .input-box{
+            font-size: 20px;
+            width: 300px;
+            align-items: center;
+            margin:5px ;
+            border-radius: 10px;
+            box-shadow: none;
+            
+
+        }
+        .Answer{
+            text-align: center;
+        }
+
+        .btn-calculate{
+            margin: 10px auto;
+            display: block;
+            font-size: 15px;
+            background-color: #D9AFD9;
+background-image: linear-gradient(198deg, #D9AFD9 0%, #97D9E1 100%);
+
+
+
+        }
+        @media screen and (max-width:768px){
+            .card{
+                width: 50%;
+            }
+            .input-box{
+                width: 50%;
+            }
+            
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1 class="app-title">Area of Rectangle</h1>
+    <div class="card">
+        
+        <input type="text" placeholder="Enter the Length" class="input-box" id="num1"><br>
+        <input type="text" placeholder="Enter the Width" class="input-box" id="num2">
+        <p class="Answer" id="ans">
+            Area Of Rectangle =
+        </p>
+        <button type="button" class="btn-calculate" onclick="calculate()">Calculate</button>
+        <button type="button" class="btn-calculate" onclick="Reset()">Reset</button>
+    </div>
+    
+    <script>
+        function calculate() {
+            
+            const input1 = document.getElementById("num1")
+            const input2 = document.getElementById("num2")
+            const Area = parseInt(input1.value) * parseInt(input2.value);
+            const ansElement = document.getElementById("ans")
+            ansElement.innerText = `Area Of Rectangle = ${Area}`
+
+        }
+        function Reset() {
+            
+            const input1 = document.getElementById("num1")
+            const input2 = document.getElementById("num2")
+            const ansElement = document.getElementById("ans")
+           input1.value="";
+           input2.value="";
+           ansElement.innerText="";
+
+        }
+
+    </script>
+</body>
+</html>
